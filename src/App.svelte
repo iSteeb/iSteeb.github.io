@@ -4,33 +4,35 @@
   import GameBlock from './GameBlock.svelte';
 </script>
 
-xw<menu> insert menu here </menu>
+<menu> insert menu here </menu>
 
 <highlights> insert highlights component here </highlights>
 
-<IconTextBlock icon="mdi:person" heading="Attributes">
-  <p>DOB: 19 Oct '96</p>
-  <p>Height: 191cm</p>
-  <p>Weight: 85kg</p>
-</IconTextBlock>
+<div class="attributes-container">
+  <IconTextBlock icon="mdi:person" heading="Attributes">
+    <p>DOB: 19 Oct '96</p>
+    <p>Height: 191cm</p>
+    <p>Weight: 85kg</p>
+  </IconTextBlock>
 
-<IconTextBlock icon="mdi:handball" heading="Reach">
-  <p>Spike Touch: 350cm</p>
-  <p>Block Touch: 340cm</p>
-  <p>Standing Reach: 254cm</p>
-</IconTextBlock>
+  <IconTextBlock icon="mdi:handball" heading="Reach">
+    <p>Spike Touch: 350cm</p>
+    <p>Block Touch: 340cm</p>
+    <p>Standing Reach: 254cm</p>
+  </IconTextBlock>
 
-<IconTextBlock icon="mdi:human-male-height" heading="Player">
-  <p>Position: Opposite</p>
-  <p>Hand: Right</p>
-  <p>Serve: Jump Server</p>
-</IconTextBlock>
+  <IconTextBlock icon="mdi:human-male-height" heading="Player">
+    <p>Position: Opposite</p>
+    <p>Hand: Right</p>
+    <p>Serve: Jump Server</p>
+  </IconTextBlock>
 
-<IconTextBlock icon="mdi:dumbbell" heading="Lifts">
-  <p>Squat: 145kg</p>
-  <p>Deadlift: 175kg</p>
-  <p>Clean: 120kg</p>
-</IconTextBlock>
+  <IconTextBlock icon="mdi:dumbbell" heading="Lifts">
+    <p>Squat: 145kg</p>
+    <p>Deadlift: 175kg</p>
+    <p>Clean: 120kg</p>
+  </IconTextBlock>
+</div>
 
 <TextBlock heading="Experience">
   <p>2021: NSW Senior Phoenix Squad Member</p>
@@ -65,14 +67,15 @@ xw<menu> insert menu here </menu>
 <GameBlock
   gameNumber={1}
   gameName="SAY v SRO"
-  videoURL="s3ragTy8o_s"
+  videoId="s3ragTy8o_s"
   statsURL="/stats1.png">
   heres a game descripton
 </GameBlock>
+
 <GameBlock
   gameNumber={2}
   gameName="SAY v BAR"
-  videoURL="s3ragTy8o_s"
+  videoId="XfVq697ZgJg"
   statsURL="/stats1.png">
   another description of a game
 </GameBlock>
@@ -91,5 +94,14 @@ xw<menu> insert menu here </menu>
   :root {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .attributes-container {
+    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+    align-items: stretch;
+    justify-content: center;
+    justify-items: center;
   }
 </style>
